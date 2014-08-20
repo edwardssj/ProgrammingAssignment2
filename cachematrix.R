@@ -1,7 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The makeCacheMatrix and cacheSolve functions demonstrate a method by which
+## the result of a calculation, in this case finding the inverse of a matrix, 
+## can be stored so that the value does not have to be calculated repeatedly.
 
-## Write a short comment describing this function
+## The function receives a matrix as a parameter and returns a list object.
+## The list allows the sub-functions to be accessed by name by cacheSolve. 
 
 makeCacheMatrix <- function(x = matrix()) {
 	  inv <- NULL
@@ -18,9 +20,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-
-
-## Write a short comment describing this function
+## The first time this function is called x$getinv() returns NULL, so the 
+## inverse is calculated. The result is 'cached' using the superassignment 
+## operator so that when the function is called again the calculation is 
+## not repeated, instead the cached value is returned.  
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
